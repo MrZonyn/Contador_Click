@@ -1,4 +1,5 @@
 <script>
+	let randomNum = 0;
 	let count = 0;
 	$: doubled = count * 2;
 	$: numeroTela = count >= 5000 ? 'grande' : '' 
@@ -21,6 +22,10 @@
 
 	function menos100() {
 		count -= 100;
+	}
+
+	function random() {
+		randomNum = Math.floor(Math.random() * 60);
 	}
 
 </script>
@@ -60,6 +65,16 @@
 		<button class="menos" on:click={menos}>
 			-
 		</button>
+
+		<button class="randomButton" on:click={random}>
+			Random
+		</button>
+	</div>
+
+	<div>
+		<strong class="randomNum">
+			{randomNum}
+		</strong>
 	</div>
 </main>
 
@@ -114,7 +129,7 @@
 		position: relative;
 		left: 568px;
 		bottom: 170px;
-		color: rgb(14, 24, 32);
+		color: rgb(21, 43, 61);
 	}
 
 	.maisCem {
@@ -141,5 +156,19 @@
 
 	.background {
 		background-color: white;
+	}
+
+	.randomButton {
+		position: relative;
+		left: 180px;
+		bottom: 20px;
+		font-size: 0.5em;
+	}
+
+	.randomNum {
+		position: relative;
+		left: 392px;
+		bottom: 70px;
+		color: rgb(14, 24, 32);
 	}
 </style>
