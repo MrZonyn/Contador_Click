@@ -2,7 +2,7 @@
 	let randomNum = 0;
 	let count = 0;
 	$: doubled = count * 2;
-	$: numeroTela = count >= 5000 ? 'grande' : '' 
+	$: numeroTela = count >= 5000 || count <= -5000 ? 'grande' : '' 
 
 	function mais() {
 		count += 1;
